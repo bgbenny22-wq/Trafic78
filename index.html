@@ -1,97 +1,644 @@
+
 <!doctype html>
+
 <html lang="bg">
-<head> 
+<head>
   <meta name="google-site-verification" content="tqlWjhi1w8CabHs_soyKw_1mq-u73Co_zI4JqJi2jzs" />
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ТРАФИК78 – транспорт на зърно. Надежден транспорт на земеделска продукция.">
-  <title>ТРАФИК78 | Транспорт на зърно</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <meta name="description" content="ТРАФИК78 – професионален транспорт на зърно и земеделска продукция. Коректен и надежден транспорт. Телефон: 0898 795 422.">
+  <meta name="keywords" content="ТРАФИК78, транспорт на зърно, зърновози, транспорт на земеделска продукция, камиони, транспорт">
+  <meta name="author" content="ТРАФИК78">  <title>ТРАФИК78 | Транспорт на зърно</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="header">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #10130f;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 6%;
+      background: rgba(10, 12, 9, .94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      font-size: 32px;
+    }
+
+    .logo b {
+      display: block;
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+
+    .logo b span,
+    h1 span {
+      color: #e5b93f;
+    }
+
+    .logo small {
+      display: block;
+      color: #aaa;
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ddd;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #e5b93f;
+    }
+
+    .phone {
+      background: #e5b93f;
+      color: #111;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    .menu {
+      display: none;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 28px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 7% 80px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.48)),
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #e5b93f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(60px, 10vw, 120px);
+      line-height: .95;
+      letter-spacing: -5px;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #ddd;
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: #e5b93f;
+      color: #111;
+    }
+
+    .ghost {
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(0,0,0,.25);
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: #181c15;
+      padding: 28px 6%;
+      gap: 25px;
+    }
+
+    .benefits > div {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .benefits strong {
+      color: #e5b93f;
+      font-size: 25px;
+    }
+
+    .benefits b,
+    .benefits small {
+      display: block;
+    }
+
+    .benefits small {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 100px 7%;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-head > span {
+      color: #e5b93f;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      margin-top: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #181c15;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #e5b93f;
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 7%;
+      background: #151912;
+    }
+
+    .about-photo {
+      min-height: 500px;
+      border-radius: 18px;
+      background:
+        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.3)),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .about-copy p {
+      color: #aaa;
+      margin: 18px 0;
+    }
+
+    .left {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .fleet {
+      padding: 100px 7%;
+    }
+
+    .center {
+      text-align: center;
+      color: #999;
+      margin: -20px auto 35px;
+      max-width: 700px;
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .fleet-grid div {
+      min-height: 260px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      font-size: 45px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .fleet-grid div:nth-child(1) {
+      background-image:
+        linear-gradient(transparent,rgba(0,0,0,.85)),
+        url("https://images.unsplash.com/photo-1586191582056-3e6c3f72c5c1?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .fleet-grid div:nth-child(2) {
+      background-image:
+        linear-gradient(transparent,rgba(0,0,0,.85)),
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .fleet-grid div:nth-child(3) {
+      background-image:
+        linear-gradient(transparent,rgba(0,0,0,.85)),
+        url("https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe3d?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .fleet-grid b,
+    .fleet-grid small {
+      display: block;
+    }
+
+    .fleet-grid b {
+      font-size: 23px;
+    }
+
+    .fleet-grid small {
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    .cta {
+      padding: 65px 7%;
+      background: #e5b93f;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta span {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .cta h2 {
+      font-size: clamp(35px,5vw,60px);
+    }
+
+    .cta p {
+      font-weight: 600;
+    }
+
+    .cta .primary {
+      background: #111;
+      color: white;
+    }
+
+    footer {
+      background: #090b08;
+      padding: 45px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      color: #999;
+    }
+
+    footer b {
+      color: white;
+    }
+
+    footer a {
+      color: #e5b93f;
+      font-weight: 800;
+    }
+
+    .footer-logo small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    @media(max-width: 900px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: #10130f;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .top-phone {
+        display: none;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .benefits,
+      .cards {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .fleet-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .header {
+        padding: 13px 5%;
+      }
+
+      .hero {
+        padding: 120px 6% 70px;
+      }
+
+      .benefits,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .about,
+      .fleet {
+        padding: 70px 6%;
+      }
+
+      .about-photo {
+        min-height: 350px;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style></head><body><header class="header">
   <a class="logo" href="#home" aria-label="ТРАФИК78">
     <span class="logo-mark">🌾</span>
-    <span><b>ТРАФИК<span>78</span></b><small>ТРАНСПОРТ НА ЗЪРНО</small></span>
-  </a>
-  <nav id="nav">
-    <a href="#home">Начало</a><a href="#about">За нас</a><a href="#services">Услуги</a>
-    <a href="#fleet">Автопарк</a><a href="#contact">Контакти</a>
-  </nav>
-  <a class="phone top-phone" href="tel:+359898795422">☎ 0898 795 422</a>
-  <button class="menu" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
-</header>
+    <span>
+      <b>ТРАФИК<span>78</span></b>
+      <small>ТРАНСПОРТ НА ЗЪРНО</small>
+    </span>
+  </a>  <nav id="nav">
+    <a href="#home">Начало</a>
+    <a href="#about">За нас</a>
+    <a href="#services">Услуги</a>
+    <a href="#fleet">Автопарк</a>
+    <a href="#contact">Контакти</a>
+  </nav><a class="phone top-phone" href="tel:+359898795422">☎ 0898 795 422</a>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-overlay"></div>
+<button class="menu" aria-label="Меню"
+onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+
+</header><main><section class="hero" id="home">
   <div class="hero-content">
-    <div class="eyebrow">СИГУРЕН • БЪРЗ • ПРОФЕСИОНАЛЕН</div>
-    <h1>ТРАФИК<span>78</span></h1>
-    <h2>Транспорт на зърно</h2>
-    <p>Надежден партньор за транспорт на земеделска продукция. Коректност, сигурност и навременна доставка.</p>
-    <div class="actions">
-      <a class="btn primary" href="tel:+359898795422">☎ Свържи се с нас</a>
-      <a class="btn ghost" href="#services">Нашите услуги →</a>
-    </div>
+    <div class="eyebrow">СИГУРЕН • БЪРЗ • ПРОФЕСИОНАЛЕН</div><h1>ТРАФИК<span>78</span></h1>
+
+<h2>Транспорт на зърно</h2>
+
+<p>
+  Надежден транспорт на зърно и земеделска продукция.
+  Коректност, сигурност и навременни доставки.
+</p>
+
+<div class="actions">
+  <a class="btn primary" href="tel:+359898795422">
+    ☎ Свържи се с нас
+  </a>
+
+  <a class="btn ghost" href="#fleet">
+    Виж автопарка →
+  </a>
+</div>
+
   </div>
-</section>
+</section><section class="benefits">  <div>
+    <strong>✓</strong>
+    <span>
+      <b>Сигурен транспорт</b>
+      <small>Отговорно отношение към товара</small>
+    </span>
+  </div>  <div>
+    <strong>◷</strong>
+    <span>
+      <b>Навременни доставки</b>
+      <small>Спазваме поетите ангажименти</small>
+    </span>
+  </div>  <div>
+    <strong>🚛</strong>
+    <span>
+      <b>Професионален автопарк</b>
+      <small>Подходящ за транспорт на зърно</small>
+    </span>
+  </div>  <div>
+    <strong>🌾</strong>
+    <span>
+      <b>Земеделска продукция</b>
+      <small>Пшеница, царевица, слънчоглед и други</small>
+    </span>
+  </div></section><section class="section" id="services">  <div class="section-head">
+    <span>НАШИТЕ УСЛУГИ</span>
+    <h2>Професионален транспорт</h2>
+  </div>  <div class="cards"><article class="card">
+  <div class="icon">🌾</div>
+  <h3>Транспорт на зърно</h3>
+  <p>
+    Превоз на пшеница, царевица, слънчоглед и други земеделски култури.
+  </p>
+</article>
 
-<section class="benefits">
-  <div><strong>✓</strong><span><b>Сигурен транспорт</b><small>Отговорно отношение към товара</small></span></div>
-  <div><strong>◷</strong><span><b>Навременни доставки</b><small>Спазваме поетите ангажименти</small></span></div>
-  <div><strong>▣</strong><span><b>Професионален автопарк</b><small>Подходящ за превоз на зърно</small></span></div>
-  <div><strong>🌾</strong><span><b>Транспорт на зърно</b><small>Различни видове земеделска продукция</small></span></div>
-</section>
+<article class="card">
+  <div class="icon">🚛</div>
+  <h3>Транспортни решения</h3>
+  <p>
+    Организиран превоз според количеството, маршрута и изискванията на клиента.
+  </p>
+</article>
 
-<section class="section" id="services">
-  <div class="section-head"><span>НАШИТЕ УСЛУГИ</span><h2>Професионален транспорт на зърно</h2></div>
-  <div class="cards">
-    <article class="card"><div class="icon">🌾</div><h3>Транспорт на зърно</h3><p>Превоз на пшеница, царевица, слънчоглед и други земеделски култури.</p></article>
-    <article class="card"><div class="icon">🚛</div><h3>Транспортни решения</h3><p>Организиран превоз според количеството, маршрута и изискванията на клиента.</p></article>
-    <article class="card"><div class="icon">⏱</div><h3>Точност и коректност</h3><p>Ясна комуникация и изпълнение на договорените срокове.</p></article>
-    <article class="card"><div class="icon">🤝</div><h3>Дългосрочно партньорство</h3><p>Стремим се към коректни и устойчиви отношения с всеки клиент.</p></article>
+<article class="card">
+  <div class="icon">⏱</div>
+  <h3>Точност и коректност</h3>
+  <p>
+    Ясна комуникация и изпълнение на договорените срокове.
+  </p>
+</article>
+
+<article class="card">
+  <div class="icon">🤝</div>
+  <h3>Дългосрочно партньорство</h3>
+  <p>
+    Коректни и устойчиви отношения с всеки клиент.
+  </p>
+</article>
+
   </div>
-</section>
+</section><section class="about" id="about">  <div class="about-photo"></div>  <div class="about-copy"><div class="section-head left">
+  <span>ЗА НАС</span>
+  <h2>ТРАФИК78 – надежден партньор</h2>
+</div>
 
-<section class="about" id="about">
-  <div class="about-photo"><div class="grain">🌾</div></div>
-  <div class="about-copy">
-    <div class="section-head left"><span>ЗА НАС</span><h2>ТРАФИК78 – вашият надежден партньор</h2></div>
-    <p>Специализираме се в транспорта на зърно и земеделска продукция. За нас добрият транспорт означава сигурност, коректност и добра организация.</p>
-    <p>Свържете се с нас за запитване и ще обсъдим най-подходящото решение за вашия товар.</p>
-    <a class="btn primary" href="tel:+359898795422">Обадете се: 0898 795 422</a>
-  </div>
-</section>
+<p>
+  ТРАФИК78 се специализира в транспорта на зърно и земеделска продукция.
+  Работим с внимание към товара, сроковете и нуждите на клиента.
+</p>
 
-<section class="fleet" id="fleet">
-  <div class="section-head"><span>АВТОПАРК</span><h2>Готови за вашия товар</h2></div>
-  <p class="center">Тук можем да добавим реални снимки и информация за вашите камиони, ремаркета и капацитет.</p>
-  <div class="fleet-grid">
-    <div>🚛<b>Камиони</b><small>Снимки и модели</small></div>
-    <div>🌾<b>Зърновози</b><small>Описание на оборудването</small></div>
-    <div>📍<b>Маршрути</b><small>България и чужбина</small></div>
-  </div>
-</section>
+<p>
+  За нас добрият транспорт означава сигурност, коректност и добра организация.
+</p>
 
-<section class="cta" id="contact">
-  <div>
+<a class="btn primary" href="tel:+359898795422">
+  Обадете се: 0898 795 422
+</a>
+
+  </div></section><section class="fleet" id="fleet">  <div class="section-head">
+    <span>АВТОПАРК</span>
+    <h2>Нашите камиони</h2>
+  </div>  <p class="center">
+    Професионален транспорт за различни видове земеделска продукция.
+  </p>  <div class="fleet-grid"><div>
+  🚛
+  <b>Камиони</b>
+  <small>Надежден транспорт</small>
+</div>
+
+<div>
+  🌾
+  <b>Зърновози</b>
+  <small>Превоз на земеделска продукция</small>
+</div>
+
+<div>
+  📍
+  <b>Маршрути</b>
+  <small>Според нуждите на клиента</small>
+</div>
+
+  </div></section><section class="cta" id="contact">  <div>
     <span>ИМАТЕ ТОВАР?</span>
     <h2>Нека поговорим.</h2>
-    <p>За транспорт и запитвания се свържете директно с ТРАФИК78.</p>
-  </div>
-  <a class="btn primary big" href="tel:+359898795422">☎ 0898 795 422</a>
-</section>
-</main>
-
-<footer>
-  <div class="footer-logo">🌾 <b>ТРАФИК78</b><small>ТРАНСПОРТ НА ЗЪРНО</small></div>
-  <div>Телефон<br><a href="tel:+359898795422">0898 795 422</a></div>
-  <div>© <span id="year"></span> ТРАФИК78<br>Всички права запазени.</div>
-</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
+    <p>
+      За транспорт и запитвания се свържете директно с ТРАФИК78.
+    </p>
+  </div>  <a class="btn primary big" href="tel:+359898795422">
+    ☎ 0898 795 422
+  </a></section></main><footer>  <div class="footer-logo">
+    🌾 <b>ТРАФИК78</b>
+    <small>ТРАНСПОРТ НА ЗЪРНО</small>
+  </div>  <div>
+    Телефон<br>
+    <a href="tel:+359898795422">0898 795 422</a>
+  </div>  <div>
+    © <span id="year"></span> ТРАФИК78<br>
+    Всички права запазени.
+  </div></footer><script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script></body>
 </html>
