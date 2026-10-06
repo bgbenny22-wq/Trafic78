@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bgbenny22-wq.github.io/Trafic78/sitemap.xml
