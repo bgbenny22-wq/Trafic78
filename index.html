@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ТРАФИК78 – транспорт на зърно. Надежден транспорт на земеделска продукция.">
+  <title>ТРАФИК78 | Транспорт на зърно</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#home" aria-label="ТРАФИК78">
+    <span class="logo-mark">🌾</span>
+    <span><b>ТРАФИК<span>78</span></b><small>ТРАНСПОРТ НА ЗЪРНО</small></span>
+  </a>
+  <nav id="nav">
+    <a href="#home">Начало</a><a href="#about">За нас</a><a href="#services">Услуги</a>
+    <a href="#fleet">Автопарк</a><a href="#contact">Контакти</a>
+  </nav>
+  <a class="phone top-phone" href="tel:+359898795422">☎ 0898 795 422</a>
+  <button class="menu" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">СИГУРЕН • БЪРЗ • ПРОФЕСИОНАЛЕН</div>
+    <h1>ТРАФИК<span>78</span></h1>
+    <h2>Транспорт на зърно</h2>
+    <p>Надежден партньор за транспорт на земеделска продукция. Коректност, сигурност и навременна доставка.</p>
+    <div class="actions">
+      <a class="btn primary" href="tel:+359898795422">☎ Свържи се с нас</a>
+      <a class="btn ghost" href="#services">Нашите услуги →</a>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div><strong>✓</strong><span><b>Сигурен транспорт</b><small>Отговорно отношение към товара</small></span></div>
+  <div><strong>◷</strong><span><b>Навременни доставки</b><small>Спазваме поетите ангажименти</small></span></div>
+  <div><strong>▣</strong><span><b>Професионален автопарк</b><small>Подходящ за превоз на зърно</small></span></div>
+  <div><strong>🌾</strong><span><b>Транспорт на зърно</b><small>Различни видове земеделска продукция</small></span></div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-head"><span>НАШИТЕ УСЛУГИ</span><h2>Професионален транспорт на зърно</h2></div>
+  <div class="cards">
+    <article class="card"><div class="icon">🌾</div><h3>Транспорт на зърно</h3><p>Превоз на пшеница, царевица, слънчоглед и други земеделски култури.</p></article>
+    <article class="card"><div class="icon">🚛</div><h3>Транспортни решения</h3><p>Организиран превоз според количеството, маршрута и изискванията на клиента.</p></article>
+    <article class="card"><div class="icon">⏱</div><h3>Точност и коректност</h3><p>Ясна комуникация и изпълнение на договорените срокове.</p></article>
+    <article class="card"><div class="icon">🤝</div><h3>Дългосрочно партньорство</h3><p>Стремим се към коректни и устойчиви отношения с всеки клиент.</p></article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-photo"><div class="grain">🌾</div></div>
+  <div class="about-copy">
+    <div class="section-head left"><span>ЗА НАС</span><h2>ТРАФИК78 – вашият надежден партньор</h2></div>
+    <p>Специализираме се в транспорта на зърно и земеделска продукция. За нас добрият транспорт означава сигурност, коректност и добра организация.</p>
+    <p>Свържете се с нас за запитване и ще обсъдим най-подходящото решение за вашия товар.</p>
+    <a class="btn primary" href="tel:+359898795422">Обадете се: 0898 795 422</a>
+  </div>
+</section>
+
+<section class="fleet" id="fleet">
+  <div class="section-head"><span>АВТОПАРК</span><h2>Готови за вашия товар</h2></div>
+  <p class="center">Тук можем да добавим реални снимки и информация за вашите камиони, ремаркета и капацитет.</p>
+  <div class="fleet-grid">
+    <div>🚛<b>Камиони</b><small>Снимки и модели</small></div>
+    <div>🌾<b>Зърновози</b><small>Описание на оборудването</small></div>
+    <div>📍<b>Маршрути</b><small>България и чужбина</small></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div>
+    <span>ИМАТЕ ТОВАР?</span>
+    <h2>Нека поговорим.</h2>
+    <p>За транспорт и запитвания се свържете директно с ТРАФИК78.</p>
+  </div>
+  <a class="btn primary big" href="tel:+359898795422">☎ 0898 795 422</a>
+</section>
+</main>
+
+<footer>
+  <div class="footer-logo">🌾 <b>ТРАФИК78</b><small>ТРАНСПОРТ НА ЗЪРНО</small></div>
+  <div>Телефон<br><a href="tel:+359898795422">0898 795 422</a></div>
+  <div>© <span id="year"></span> ТРАФИК78<br>Всички права запазени.</div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
