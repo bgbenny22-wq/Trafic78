@@ -1,274 +1,586 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ТРАФИК78 | Транспорт на зърно</title>
-  <meta name="description" content="ТРАФИК78 – надежден транспорт на зърно и земеделска продукция. Телефон: 0898795422">
+  <title>ТРАФИК78 | Транспорт на зърно и земеделска продукция</title>
+
+  <meta name="description"
+    content="ТРАФИК78 – професионален транспорт на зърно и земеделска продукция. Превоз на пшеница, царевица, слънчоглед и други товари. Телефон 0898795422.">
+
+  <meta name="keywords"
+    content="ТРАФИК78, транспорт на зърно, транспорт Варна, превоз на зърно, транспорт на земеделска продукция, камиони, пшеница, царевица, слънчоглед">
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#e10600">
+
+  <meta property="og:title"
+    content="ТРАФИК78 | Транспорт на зърно">
+
+  <meta property="og:description"
+    content="Професионален транспорт на зърно и земеделска продукция.">
+
+  <meta property="og:type" content="website">
 
   <style>
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #090909;
+      background: #050505;
       color: white;
+      overflow-x: hidden;
     }
 
-    /* ===== ЛОГО ===== */
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: white;
-    }
-
-    .logo-trucks {
-      width: 145px;
-      height: 55px;
-    }
-
-    .logo-text {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      color: white;
-    }
-
-    .logo-text span {
-      color: #e50909;
-    }
-
-    /* ===== HEADER ===== */
+    /* ================= HEADER ================= */
 
     header {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 10;
-      padding: 18px 6%;
+      z-index: 20;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      padding: 20px 6%;
+
       background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,.85),
+        rgba(0,0,0,.9),
         transparent
       );
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-name {
+      font-size: 30px;
+      font-weight: 1000;
+      letter-spacing: -1px;
+    }
+
+    .brand-name span {
+      color: #e10600;
+    }
+
+    /* малки камиони в логото */
+
+    .logo-trucks {
+      display: flex;
+      gap: 3px;
+      align-items: end;
+    }
+
+    .mini-truck {
+      position: relative;
+      width: 45px;
+      height: 30px;
+    }
+
+    .mini-body {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 30px;
+      height: 17px;
+      background: #e10600;
+      border-radius: 2px;
+    }
+
+    .mini-cab {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      width: 18px;
+      height: 13px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    .mini-wheel {
+      position: absolute;
+      bottom: 0;
+      width: 9px;
+      height: 9px;
+      background: #111;
+      border: 2px solid #aaa;
+      border-radius: 50%;
+    }
+
+    .mini-wheel.one {
+      left: 5px;
+    }
+
+    .mini-wheel.two {
+      right: 3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 25px;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
     }
 
     nav a:hover {
-      color: #e50909;
+      color: #e10600;
     }
 
-    /* ===== HERO ===== */
+    /* ================= HERO ================= */
 
     .hero {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
 
+      display: flex;
+      align-items: center;
+
       background:
-        radial-gradient(circle at 50% 55%, #5e0808 0%, #1b0505 35%, #050505 75%);
+        radial-gradient(
+          circle at 70% 65%,
+          rgba(225,6,0,.32),
+          transparent 35%
+        ),
+        linear-gradient(
+          120deg,
+          #030303 0%,
+          #100000 48%,
+          #350000 100%
+        );
     }
 
-    .hero::after {
+    /* червени линии */
+
+    .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.8),
-          rgba(0,0,0,.15),
-          rgba(0,0,0,.8)
-        );
+      width: 800px;
+      height: 800px;
+      right: -300px;
+      top: 100px;
+
+      border: 2px solid rgba(225,6,0,.25);
+      border-radius: 50%;
     }
 
     .hero-content {
       position: relative;
-      z-index: 5;
-      text-align: center;
-      padding-top: 100px;
+      z-index: 10;
+      width: 48%;
+      margin-left: 7%;
+      padding-top: 80px;
     }
 
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 100px);
+    .tag {
+      display: inline-block;
+      color: #ff2a22;
+      border-left: 4px solid #e10600;
+      padding-left: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(55px, 7vw, 105px);
+      line-height: .9;
       font-weight: 1000;
       text-transform: uppercase;
-      letter-spacing: 4px;
-      text-shadow: 0 5px 25px black;
+      letter-spacing: -5px;
     }
 
-    .hero h1 span {
-      color: #e50909;
+    h1 span {
+      color: #e10600;
     }
 
-    .hero p {
-      font-size: 21px;
-      margin: 15px 0 28px;
-      font-weight: 600;
-    }
+    .hero-description {
+      margin-top: 25px;
+      max-width: 600px;
 
-    .phone {
-      display: inline-block;
-      padding: 16px 32px;
-      background: #e50909;
-      color: white;
-      text-decoration: none;
       font-size: 20px;
+      line-height: 1.6;
+      color: #d0d0d0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 17px 28px;
+      text-decoration: none;
       font-weight: 900;
-      border-radius: 8px;
-      box-shadow: 0 0 30px rgba(229,9,9,.5);
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: .25s;
     }
 
-    .phone:hover {
-      background: #ff2020;
-      transform: scale(1.04);
+    .btn-red {
+      background: #e10600;
+      color: white;
+      box-shadow: 0 10px 35px rgba(225,6,0,.35);
     }
 
-    /* ===== ГОЛЕМИ КАМИОНИ ===== */
+    .btn-red:hover {
+      background: #ff211a;
+      transform: translateY(-3px);
+    }
 
-    .big-trucks {
+    .btn-dark {
+      border: 1px solid #555;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      border-color: #e10600;
+    }
+
+    /* ================= КАМИОНИ ================= */
+
+    .trucks {
       position: absolute;
-      z-index: 2;
+      right: -30px;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(1200px, 100%);
-      height: 430px;
+      width: 58%;
+      height: 75%;
     }
 
     .truck {
       position: absolute;
-      bottom: 20px;
-      filter: drop-shadow(0 20px 25px rgba(0,0,0,.9));
+      bottom: 0;
+      filter: drop-shadow(0 25px 30px rgba(0,0,0,.8));
     }
 
-    .truck1 {
-      left: 2%;
+    .truck-back {
+      right: 22%;
+      width: 470px;
       transform: scale(.72);
+      opacity: .75;
     }
 
-    .truck2 {
-      left: 29%;
-      transform: scale(1);
-      z-index: 3;
+    .truck-front {
+      right: -3%;
+      width: 650px;
+      z-index: 4;
     }
 
-    .truck3 {
+    /* trailer */
+
+    .trailer {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      width: 390px;
+      height: 180px;
+      background: linear-gradient(145deg,#e10600,#750000);
+      transform: skewY(-2deg);
+      border-radius: 5px;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.08);
+    }
+
+    .trailer::after {
+      content: "ТРАФИК78";
+      position: absolute;
+      left: 25px;
+      top: 65px;
+      font-size: 38px;
+      font-weight: 1000;
+      color: white;
+      letter-spacing: -2px;
+    }
+
+    /* кабина */
+
+    .cab {
+      position: absolute;
       right: 0;
-      transform: scale(.75);
+      top: 110px;
+      width: 230px;
+      height: 150px;
+      background: linear-gradient(145deg,#202020,#050505);
+      clip-path: polygon(
+        0 18%,
+        72% 0,
+        100% 25%,
+        100% 100%,
+        0 100%
+      );
+      border-bottom: 6px solid #e10600;
     }
 
-    /* ===== SECTIONS ===== */
+    .window {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      width: 105px;
+      height: 55px;
+      background: linear-gradient(145deg,#222,#020202);
+      border: 3px solid #444;
+      transform: skew(-10deg);
+    }
+
+    .grille {
+      position: absolute;
+      right: 5px;
+      bottom: 35px;
+      width: 115px;
+      height: 48px;
+      background: repeating-linear-gradient(
+        0deg,
+        #111 0px,
+        #111 6px,
+        #555 7px,
+        #111 9px
+      );
+      border: 3px solid #e10600;
+    }
+
+    .headlight {
+      position: absolute;
+      right: 7px;
+      bottom: 92px;
+      width: 20px;
+      height: 18px;
+      background: white;
+      box-shadow: 0 0 25px white;
+    }
+
+    .wheel {
+      position: absolute;
+      bottom: -25px;
+      width: 80px;
+      height: 80px;
+      background: #030303;
+      border: 8px solid #252525;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 10px #111;
+    }
+
+    .wheel::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      left: 19px;
+      top: 19px;
+      border-radius: 50%;
+      background: #888;
+    }
+
+    .wheel.one {
+      left: 70px;
+    }
+
+    .wheel.two {
+      right: 60px;
+    }
+
+    /* ================= SERVICES ================= */
 
     .section {
-      padding: 80px 8%;
+      padding: 100px 7%;
+      background: #080808;
+    }
+
+    .section-title {
       text-align: center;
-      background: #0d0d0d;
+      font-size: 48px;
+      font-weight: 1000;
+      text-transform: uppercase;
     }
 
-    .section h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
+    .section-title span {
+      color: #e10600;
     }
 
-    .section h2 span {
-      color: #e50909;
+    .section-subtitle {
+      text-align: center;
+      color: #999;
+      margin-top: 12px;
+      font-size: 18px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 25px;
-      margin-top: 45px;
+      margin-top: 55px;
     }
 
     .card {
-      background: #171717;
-      padding: 35px 25px;
-      border: 1px solid #333;
-      border-radius: 12px;
+      padding: 40px 30px;
+      background: linear-gradient(145deg,#151515,#090909);
+      border: 1px solid #292929;
+      border-top: 4px solid #e10600;
+      transition: .3s;
     }
 
-    .card strong {
-      display: block;
-      color: #e50909;
-      font-size: 24px;
-      margin-bottom: 12px;
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #e10600;
     }
+
+    .card-number {
+      color: #e10600;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      margin: 18px 0 12px;
+    }
+
+    .card p {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      padding: 100px 7%;
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(225,6,0,.12),
+          rgba(225,6,0,.02)
+        ),
+        #070707;
+    }
+
+    .contact h2 {
+      font-size: 50px;
+      font-weight: 1000;
+    }
+
+    .contact h2 span {
+      color: #e10600;
+    }
+
+    .phone {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: clamp(30px,5vw,55px);
+      color: white;
+      text-decoration: none;
+      font-weight: 1000;
+    }
+
+    .phone:hover {
+      color: #e10600;
+    }
+
+    /* ================= FOOTER ================= */
 
     footer {
-      background: #050505;
+      padding: 30px 7%;
+      background: #020202;
+      border-top: 1px solid #222;
       text-align: center;
-      padding: 30px;
-      border-top: 2px solid #e50909;
+      color: #777;
     }
 
-    @media(max-width: 800px) {
+    /* ================= MOBILE ================= */
+
+    @media(max-width:900px) {
+
+      header {
+        padding: 15px 5%;
+      }
 
       nav {
         display: none;
       }
 
-      .logo-text {
-        font-size: 20px;
+      .brand-name {
+        font-size: 23px;
       }
 
-      .logo-trucks {
-        width: 110px;
+      .hero {
+        min-height: 900px;
+        align-items: flex-start;
       }
 
-      .big-trucks {
-        height: 300px;
+      .hero-content {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 150px;
+        text-align: center;
       }
 
-      .truck1 {
-        left: -20%;
-        transform: scale(.45);
-      }
-
-      .truck2 {
-        left: 12%;
-        transform: scale(.62);
-      }
-
-      .truck3 {
-        right: -25%;
-        transform: scale(.48);
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
+      .hero-description {
         font-size: 17px;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .trucks {
+        width: 100%;
+        height: 390px;
+        right: 0;
+        bottom: 0;
+      }
+
+      .truck-front {
+        right: -170px;
+        transform: scale(.65);
+        transform-origin: bottom right;
+      }
+
+      .truck-back {
+        right: -100px;
+        transform: scale(.5);
+      }
+
+      h1 {
+        font-size: 60px;
       }
 
       .cards {
         grid-template-columns: 1fr;
       }
+
+      .section-title {
+        font-size: 35px;
+      }
+
+      .contact h2 {
+        font-size: 38px;
+      }
     }
+
   </style>
 </head>
 
@@ -276,223 +588,175 @@
 
 <header>
 
-  <!-- ЛОГО С КАМИОНИ -->
-  <a class="logo" href="#top">
+  <div class="brand">
 
-    <svg class="logo-trucks" viewBox="0 0 300 110">
+    <div class="logo-trucks">
 
-      <!-- камион 1 -->
-      <g transform="translate(0,20)">
-        <rect x="10" y="25" width="115" height="48"
-              rx="5" fill="#c90808"/>
-        <path d="M125 42 L160 42 L178 60 L178 73 L125 73Z"
-              fill="#e50909"/>
-        <rect x="140" y="47" width="25" height="18"
-              fill="#111"/>
-        <circle cx="45" cy="78" r="15" fill="#111"/>
-        <circle cx="45" cy="78" r="7" fill="#aaa"/>
-        <circle cx="145" cy="78" r="15" fill="#111"/>
-        <circle cx="145" cy="78" r="7" fill="#aaa"/>
-      </g>
+      <div class="mini-truck">
+        <div class="mini-body"></div>
+        <div class="mini-cab"></div>
+        <div class="mini-wheel one"></div>
+        <div class="mini-wheel two"></div>
+      </div>
 
-      <!-- камион 2 -->
-      <g transform="translate(100,0)">
-        <rect x="10" y="25" width="105" height="48"
-              rx="5" fill="#222"/>
-        <path d="M115 42 L150 42 L170 60 L170 73 L115 73Z"
-              fill="#e50909"/>
-        <rect x="128" y="47" width="27" height="18"
-              fill="#111"/>
-        <circle cx="43" cy="78" r="15" fill="#111"/>
-        <circle cx="43" cy="78" r="7" fill="#aaa"/>
-        <circle cx="138" cy="78" r="15" fill="#111"/>
-        <circle cx="138" cy="78" r="7" fill="#aaa"/>
-      </g>
+      <div class="mini-truck">
+        <div class="mini-body" style="background:#333"></div>
+        <div class="mini-cab"></div>
+        <div class="mini-wheel one"></div>
+        <div class="mini-wheel two"></div>
+      </div>
 
-    </svg>
+    </div>
 
-    <div class="logo-text">
+    <div class="brand-name">
       ТРАФИК<span>78</span>
     </div>
 
-  </a>
+  </div>
 
   <nav>
-    <a href="#top">Начало</a>
     <a href="#services">Услуги</a>
+    <a href="#about">За нас</a>
     <a href="#contact">Контакти</a>
   </nav>
 
 </header>
 
 
-<!-- НАЧАЛНА СТРАНИЦА -->
+<!-- HERO -->
 
-<section class="hero" id="top">
+<section class="hero">
 
   <div class="hero-content">
+
+    <div class="tag">
+      Професионален транспорт
+    </div>
 
     <h1>
       ТРАФИК<span>78</span>
     </h1>
 
-    <p>
-      Транспорт на зърно и земеделска продукция
+    <p class="hero-description">
+      Транспорт на зърно и земеделска продукция.
+      Надежден превоз, сериозни камиони и коректно отношение.
     </p>
 
-    <a class="phone" href="tel:0898795422">
-      📞 0898 795 422
-    </a>
+    <div class="buttons">
+
+      <a class="btn btn-red" href="tel:0898795422">
+        📞 0898 795 422
+      </a>
+
+      <a class="btn btn-dark" href="#services">
+        Нашите услуги
+      </a>
+
+    </div>
 
   </div>
 
 
-  <!-- ГОЛЕМИТЕ КАМИОНИ -->
+  <!-- ГОЛЯМ КАМИОН -->
 
-  <div class="big-trucks">
+  <div class="trucks">
 
-    <!-- КАМИОН 1 -->
-    <svg class="truck truck1" width="500" height="320" viewBox="0 0 500 320">
+    <div class="truck truck-back">
 
-      <rect x="30" y="100" width="290" height="130"
-            rx="8" fill="#b80808"/>
+      <div class="trailer"></div>
 
-      <path d="M320 135
-               L405 135
-               L470 190
-               L470 230
-               L320 230Z"
-            fill="#e50909"/>
+      <div class="cab">
 
-      <rect x="345" y="150" width="60" height="45"
-            fill="#111"/>
+        <div class="window"></div>
+        <div class="grille"></div>
+        <div class="headlight"></div>
 
-      <text x="70" y="170"
-            font-size="36"
-            font-weight="900"
-            fill="white">
-        ТРАФИК78
-      </text>
+      </div>
 
-      <rect x="65" y="190" width="210" height="8"
-            fill="#111"/>
+      <div class="wheel one"></div>
+      <div class="wheel two"></div>
 
-      <circle cx="105" cy="250" r="38" fill="#080808"/>
-      <circle cx="105" cy="250" r="17" fill="#aaa"/>
-
-      <circle cx="370" cy="250" r="38" fill="#080808"/>
-      <circle cx="370" cy="250" r="17" fill="#aaa"/>
-
-      <circle cx="440" cy="250" r="38" fill="#080808"/>
-      <circle cx="440" cy="250" r="17" fill="#aaa"/>
-
-    </svg>
+    </div>
 
 
-    <!-- КАМИОН 2 -->
-    <svg class="truck truck2" width="600" height="380" viewBox="0 0 600 380">
+    <div class="truck truck-front">
 
-      <rect x="30" y="100" width="340" height="150"
-            rx="8" fill="#151515"/>
+      <div class="trailer"></div>
 
-      <path d="M370 140
-               L475 140
-               L550 205
-               L550 250
-               L370 250Z"
-            fill="#d90909"/>
+      <div class="cab">
 
-      <rect x="400" y="155" width="75" height="55"
-            fill="#111"/>
+        <div class="window"></div>
 
-      <text x="65" y="180"
-            font-size="42"
-            font-weight="900"
-            fill="#e50909">
-        ТРАФИК78
-      </text>
+        <div class="grille"></div>
 
-      <text x="70" y="220"
-            font-size="22"
-            font-weight="bold"
-            fill="white">
-        GRAIN TRANSPORT
-      </text>
+        <div class="headlight"></div>
 
-      <circle cx="120" cy="275" r="45" fill="#050505"/>
-      <circle cx="120" cy="275" r="20" fill="#aaa"/>
+      </div>
 
-      <circle cx="420" cy="275" r="45" fill="#050505"/>
-      <circle cx="420" cy="275" r="20" fill="#aaa"/>
+      <div class="wheel one"></div>
+      <div class="wheel two"></div>
 
-      <circle cx="510" cy="275" r="45" fill="#050505"/>
-      <circle cx="510" cy="275" r="20" fill="#aaa"/>
-
-    </svg>
-
-
-    <!-- КАМИОН 3 -->
-    <svg class="truck truck3" width="500" height="320" viewBox="0 0 500 320">
-
-      <rect x="20" y="105" width="300" height="125"
-            rx="8" fill="#222"/>
-
-      <path d="M320 140
-               L400 140
-               L470 195
-               L470 230
-               L320 230Z"
-            fill="#e50909"/>
-
-      <rect x="345" y="153" width="60" height="40"
-            fill="#111"/>
-
-      <text x="60" y="175"
-            font-size="35"
-            font-weight="900"
-            fill="white">
-        ТРАФИК78
-      </text>
-
-      <circle cx="100" cy="250" r="38" fill="#050505"/>
-      <circle cx="100" cy="250" r="17" fill="#aaa"/>
-
-      <circle cx="370" cy="250" r="38" fill="#050505"/>
-      <circle cx="370" cy="250" r="17" fill="#aaa"/>
-
-      <circle cx="440" cy="250" r="38" fill="#050505"/>
-      <circle cx="440" cy="250" r="17" fill="#aaa"/>
-
-    </svg>
+    </div>
 
   </div>
 
 </section>
 
 
+<!-- SERVICES -->
+
 <section class="section" id="services">
 
-  <h2>Нашите <span>услуги</span></h2>
+  <h2 class="section-title">
+    Нашите <span>услуги</span>
+  </h2>
 
-  <p>
-    Професионален транспорт на зърно и земеделска продукция.
+  <p class="section-subtitle">
+    Транспортни решения за земеделския сектор
   </p>
+
 
   <div class="cards">
 
     <div class="card">
-      <strong>🚛 Зърнен транспорт</strong>
-      Транспорт на пшеница, царевица, слънчоглед и други земеделски култури.
+
+      <div class="card-number">01 / ТРАНСПОРТ</div>
+
+      <h3>Транспорт на зърно</h3>
+
+      <p>
+        Превоз на пшеница, царевица, слънчоглед
+        и други видове зърнена продукция.
+      </p>
+
     </div>
 
-    <div class="card">
-      <strong>🌾 Земеделска продукция</strong>
-      Надеждно превозване на товари от полето до складове и бази.
-    </div>
 
     <div class="card">
-      <strong>⚡ Бърза услуга</strong>
-      Коректност, сигурност и професионално отношение.
+
+      <div class="card-number">02 / ТОВАРИ</div>
+
+      <h3>Земеделска продукция</h3>
+
+      <p>
+        Надежден транспорт на земеделска продукция
+        между стопанства, бази и складове.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-number">03 / СИГУРНОСТ</div>
+
+      <h3>Коректен превоз</h3>
+
+      <p>
+        Сериозно отношение към всеки товар,
+        срок и транспортна задача.
+      </p>
+
     </div>
 
   </div>
@@ -500,20 +764,68 @@
 </section>
 
 
-<section class="section" id="contact">
+<!-- ABOUT -->
 
-  <h2>Свържете се с <span>нас</span></h2>
+<section class="section" id="about">
 
-  <p style="font-size:25px;margin-top:20px;">
-    📞 <strong>0898 795 422</strong>
+  <h2 class="section-title">
+    ТРАФИК<span>78</span>
+  </h2>
+
+  <p class="section-subtitle" style="max-width:800px;margin:20px auto 0;line-height:1.8;">
+
+    ТРАФИК78 е транспортна фирма, специализирана
+    в превоза на зърно и земеделска продукция.
+    Нашата цел е надежден, сигурен и коректен транспорт.
+
   </p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <h2>
+    Имате <span>товар?</span>
+  </h2>
+
+  <p style="margin-top:15px;color:#999;font-size:18px;">
+    Свържете се с ТРАФИК78
+  </p>
+
+  <a class="phone" href="tel:0898795422">
+    0898 795 422
+  </a>
 
 </section>
 
 
 <footer>
-  © 2026 ТРАФИК78 – Транспорт на зърно
+
+  © 2026 ТРАФИК78 · Транспорт на зърно
+
 </footer>
+
+
+<!-- SEO STRUCTURED DATA -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TransportationService",
+  "name": "ТРАФИК78",
+  "description": "Транспорт на зърно и земеделска продукция.",
+  "telephone": "+359898795422",
+  "areaServed": "Bulgaria",
+  "serviceType": [
+    "Транспорт на зърно",
+    "Транспорт на земеделска продукция",
+    "Превоз на товари"
+  ]
+}
+</script>
 
 </body>
 </html>
