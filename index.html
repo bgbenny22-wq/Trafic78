@@ -1,535 +1,885 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ТРАФИК78 | Транспорт на зърно и земеделска продукция</title>
-
-  <meta name="description"
-    content="ТРАФИК78 – професионален транспорт на зърно и земеделска продукция. Надежден превоз с камиони. Телефон 0898 795 422. Имейл trafik78@abv.bg">
-
-  <meta name="keywords"
-    content="ТРАФИК78, Трафик 78, транспорт на зърно, превоз на зърно, земеделска продукция, зърновози, камиони, транспорт">
-
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#e10600">
-
-  <meta property="og:title" content="ТРАФИК78 | Транспорт на зърно">
-  <meta property="og:description"
-    content="Професионален транспорт на зърно и земеделска продукция.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="trafik78-kamion-1.jpg">
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 20px 6%;
-
-      background: linear-gradient(
-        rgba(0,0,0,.95),
-        rgba(0,0,0,0)
-      );
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo {
-      font-size: 38px;
-      line-height: 1;
-    }
-
-    .brand-name {
-      font-size: 30px;
-      font-weight: 1000;
-      letter-spacing: -1px;
-    }
-
-    .brand-name span {
-      color: #e10600;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 900;
-      text-transform: uppercase;
-      transition: .2s;
-    }
-
-    nav a:hover {
-      color: #e10600;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
-
-      display: flex;
-      align-items: center;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.98) 0%,
-          rgba(0,0,0,.88) 38%,
-          rgba(0,0,0,.35) 65%,
-          rgba(0,0,0,.65) 100%
-        ),
-        url("trafik78-kamion-1.jpg") center right / cover no-repeat;
-
-      border-bottom: 5px solid #e10600;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          135deg,
-          transparent 55%,
-          rgba(225,6,0,.35) 56%,
-          transparent 57%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 10;
-
-      width: 55%;
-      padding-left: 7%;
-      padding-top: 60px;
-    }
-
-    .tag {
-      display: inline-block;
-
-      color: #fff;
-      background: #e10600;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ТРАФИК78 | Транспорт на зърно и земеделска продукция</title>
+
+<meta name="description" content="ТРАФИК78 – професионален транспорт на зърно и земеделска продукция. Надежден превоз с камиони. Телефон 0898 795 422. Имейл trafik78@abv.bg">
+
+<meta name="keywords" content="ТРАФИК78, Трафик 78, транспорт на зърно, превоз на зърно, земеделска продукция, зърновози, камиони, транспорт">
+
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#e10600">
+
+<meta property="og:title" content="ТРАФИК78 | Транспорт на зърно">
+<meta property="og:description" content="Професионален транспорт на зърно и земеделска продукция.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="trafik78-kamion-1.jpg">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #050505;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-      padding: 9px 15px;
-      margin-bottom: 20px;
+  padding: 20px 6%;
 
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+  background: linear-gradient(
+    rgba(0,0,0,.95),
+    transparent
+  );
+}
 
-      transform: skew(-8deg);
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    h1 {
-      font-size: clamp(65px, 9vw, 125px);
-      line-height: .85;
-      font-weight: 1000;
-      letter-spacing: -7px;
-      text-transform: uppercase;
+.logo {
+  font-size: 40px;
+}
 
-      text-shadow: 0 10px 40px #000;
-    }
+.brand-name {
+  font-size: 30px;
+  font-weight: 1000;
+}
 
-    h1 span {
-      color: #e10600;
-    }
+.brand-name span {
+  color: #e10600;
+}
 
-    .hero-title {
-      font-size: clamp(25px, 3vw, 45px);
-      font-weight: 1000;
-      margin-top: 20px;
-      text-transform: uppercase;
-    }
+nav {
+  display: flex;
+  gap: 28px;
+}
 
-    .hero-description {
-      max-width: 620px;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
 
-      margin-top: 18px;
+nav a:hover {
+  color: #e10600;
+}
 
-      color: #ddd;
-      font-size: 19px;
-      line-height: 1.6;
-    }
+/* HERO */
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 
-      margin-top: 30px;
-    }
+  display: flex;
+  align-items: center;
 
-    .btn {
-      display: inline-block;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.98) 0%,
+      rgba(0,0,0,.88) 35%,
+      rgba(0,0,0,.35) 70%,
+      rgba(0,0,0,.55) 100%
+    ),
+    url("trafik78-kamion-1.jpg") center right / cover no-repeat;
 
-      padding: 17px 25px;
+  border-bottom: 5px solid #e10600;
+}
 
-      text-decoration: none;
-      font-weight: 1000;
-      text-transform: uppercase;
+.hero-content {
+  position: relative;
+  z-index: 10;
 
-      border-radius: 4px;
+  width: 55%;
+  padding-left: 7%;
+  padding-top: 60px;
+}
 
-      transition: .25s;
-    }
+.tag {
+  display: inline-block;
 
-    .btn-red {
-      background: #e10600;
-      color: white;
+  background: #e10600;
+  color: white;
 
-      box-shadow: 0 10px 35px rgba(225,6,0,.45);
-    }
+  padding: 9px 15px;
 
-    .btn-red:hover {
-      background: #ff1b14;
-      transform: translateY(-3px);
-    }
+  margin-bottom: 20px;
 
-    .btn-dark {
-      color: white;
-      border: 2px solid #777;
-      background: rgba(0,0,0,.6);
-    }
+  font-weight: 900;
+  letter-spacing: 2px;
 
-    .btn-dark:hover {
-      border-color: #e10600;
-      color: #e10600;
-    }
+  transform: skew(-8deg);
+}
 
-    /* ================= HERO INFO ================= */
+h1 {
+  font-size: clamp(65px, 9vw, 125px);
+  line-height: .85;
 
-    .hero-info {
-      position: absolute;
-      bottom: 35px;
-      left: 7%;
+  font-weight: 1000;
+  letter-spacing: -6px;
 
-      display: flex;
-      gap: 15px;
+  text-transform: uppercase;
 
-      z-index: 20;
-    }
+  text-shadow: 0 10px 40px #000;
+}
 
-    .info-box {
-      padding: 13px 18px;
+h1 span {
+  color: #e10600;
+}
 
-      background: rgba(0,0,0,.75);
-      border-left: 4px solid #e10600;
+.hero-title {
+  margin-top: 20px;
 
-      font-size: 13px;
-      font-weight: 800;
-    }
+  font-size: clamp(25px, 3vw, 45px);
+  font-weight: 1000;
 
-    /* ================= SECTION ================= */
+  text-transform: uppercase;
+}
 
-    .section {
-      padding: 100px 7%;
-      background: #080808;
-    }
+.hero-description {
+  max-width: 620px;
 
-    .section-title {
-      text-align: center;
+  margin-top: 18px;
 
-      font-size: clamp(38px, 5vw, 65px);
-      font-weight: 1000;
+  color: #ddd;
 
-      text-transform: uppercase;
-    }
+  font-size: 19px;
+  line-height: 1.6;
+}
 
-    .section-title span {
-      color: #e10600;
-    }
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 
-    .section-subtitle {
-      max-width: 700px;
+  margin-top: 30px;
+}
 
-      margin: 15px auto 0;
+.btn {
+  display: inline-block;
 
-      text-align: center;
+  padding: 17px 25px;
 
-      color: #999;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+  text-decoration: none;
 
-    /* ================= SERVICES ================= */
+  font-weight: 1000;
+  text-transform: uppercase;
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
+  border-radius: 4px;
 
-      gap: 25px;
+  transition: .25s;
+}
 
-      margin-top: 55px;
-    }
+.btn-red {
+  background: #e10600;
+  color: white;
 
-    .card {
-      position: relative;
+  box-shadow: 0 10px 35px rgba(225,6,0,.45);
+}
 
-      padding: 40px 30px;
+.btn-red:hover {
+  background: #ff211a;
+  transform: translateY(-3px);
+}
 
-      background:
-        linear-gradient(
-          145deg,
-          #181818,
-          #080808
-        );
+.btn-dark {
+  color: white;
 
-      border: 1px solid #292929;
-      border-top: 5px solid #e10600;
+  border: 2px solid #777;
 
-      transition: .3s;
-    }
+  background: rgba(0,0,0,.65);
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #e10600;
-      box-shadow: 0 20px 50px rgba(225,6,0,.12);
-    }
+.btn-dark:hover {
+  border-color: #e10600;
+  color: #e10600;
+}
 
-    .card-number {
-      color: #e10600;
-      font-size: 16px;
-      font-weight: 1000;
-    }
+/* HERO INFO */
 
-    .card h3 {
-      margin: 18px 0 12px;
-      font-size: 26px;
-    }
+.hero-info {
+  position: absolute;
 
-    .card p {
-      color: #aaa;
-      line-height: 1.7;
-    }
+  left: 7%;
+  bottom: 30px;
 
-    /* ================= FLEET ================= */
+  display: flex;
+  gap: 12px;
 
-    .fleet {
-      background:
-        linear-gradient(
-          rgba(225,6,0,.07),
-          rgba(0,0,0,0)
-        ),
-        #050505;
-    }
+  z-index: 20;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 20px;
+.info-box {
+  padding: 12px 16px;
 
-      margin-top: 55px;
-    }
+  background: rgba(0,0,0,.8);
 
-    .gallery-item {
-      position: relative;
+  border-left: 4px solid #e10600;
 
-      height: 360px;
+  font-size: 12px;
+  font-weight: 900;
+}
 
-      overflow: hidden;
+/* SECTIONS */
 
-      border: 2px solid #222;
-      background: #111;
-    }
+.section {
+  padding: 100px 7%;
+  background: #080808;
+}
 
-    .gallery-item::after {
-      content: "ТРАФИК78";
+.section-title {
+  text-align: center;
 
-      position: absolute;
-      left: 20px;
-      bottom: 15px;
+  font-size: clamp(38px,5vw,65px);
 
-      padding: 7px 12px;
+  font-weight: 1000;
 
-      background: #e10600;
+  text-transform: uppercase;
+}
 
-      font-size: 16px;
-      font-weight: 1000;
+.section-title span {
+  color: #e10600;
+}
 
-      z-index: 2;
-    }
+.section-subtitle {
+  max-width: 700px;
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
+  margin: 15px auto 0;
 
-      object-fit: cover;
+  text-align: center;
 
-      display: block;
+  color: #999;
 
-      transition: .5s;
-    }
+  font-size: 18px;
+  line-height: 1.6;
+}
 
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
+/* SERVICES */
 
-    /* ================= ABOUT ================= */
+.cards {
+  display: grid;
 
-    .about-box {
-      max-width: 950px;
+  grid-template-columns: repeat(3,1fr);
 
-      margin: 45px auto 0;
+  gap: 25px;
 
-      padding: 45px;
+  margin-top: 55px;
+}
 
-      background: #111;
+.card {
+  padding: 40px 30px;
 
-      border-left: 6px solid #e10600;
+  background:
+    linear-gradient(
+      145deg,
+      #181818,
+      #080808
+    );
 
-      box-shadow: 0 20px 60px rgba(0,0,0,.4);
-    }
+  border: 1px solid #292929;
 
-    .about-box p {
-      color: #ccc;
+  border-top: 5px solid #e10600;
 
-      font-size: 19px;
-      line-height: 1.8;
+  transition: .3s;
+}
 
-      text-align: center;
-    }
+.card:hover {
+  transform: translateY(-8px);
 
-    /* ================= CONTACT ================= */
+  border-color: #e10600;
 
-    .contact {
-      position: relative;
+  box-shadow: 0 20px 50px rgba(225,6,0,.15);
+}
 
-      padding: 110px 7%;
+.card-number {
+  color: #e10600;
 
-      text-align: center;
+  font-size: 16px;
 
-      background:
-        linear-gradient(
-          rgba(225,6,0,.15),
-          rgba(0,0,0,.95)
-        ),
-        #080808;
+  font-weight: 1000;
+}
 
-      border-top: 3px solid #e10600;
-    }
+.card h3 {
+  margin: 18px 0 12px;
 
-    .contact h2 {
-      font-size: clamp(40px, 6vw, 75px);
-      font-weight: 1000;
-      text-transform: uppercase;
-    }
+  font-size: 26px;
+}
 
-    .contact h2 span {
-      color: #e10600;
-    }
+.card p {
+  color: #aaa;
 
-    .contact-text {
-      margin-top: 15px;
-      color: #aaa;
-      font-size: 19px;
-    }
+  line-height: 1.7;
+}
 
-    .contact-buttons {
-      display: flex;
+/* FLEET */
 
-      justify-content: center;
-      flex-wrap: wrap;
+.fleet {
+  background:
+    linear-gradient(
+      rgba(225,6,0,.08),
+      rgba(0,0,0,0)
+    ),
+    #050505;
+}
 
-      gap: 15px;
+.gallery {
+  display: grid;
 
-      margin-top: 35px;
-    }
+  grid-template-columns: repeat(2,1fr);
 
-    .contact-button {
-      display: inline-block;
+  gap: 20px;
 
-      padding: 18px 28px;
+  margin-top: 55px;
+}
 
-      color: white;
-      text-decoration: none;
+.gallery-item {
+  position: relative;
 
-      background: #e10600;
+  height: 360px;
 
-      font-size: 18px;
-      font-weight: 1000;
+  overflow: hidden;
 
-      border-radius: 4px;
+  border: 2px solid #252525;
 
-      transition: .25s;
-    }
+  background: #111;
+}
 
-    .contact-button:hover {
-      background: #ff211a;
-      transform: translateY(-3px);
-    }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
 
-    .contact-button.email {
-      background: #151515;
-      border: 2px solid #444;
-    }
+  display: block;
 
-    .contact-button.email:hover {
-      border-color: #e10600;
-      background: #151515;
-    }
+  object-fit: cover;
 
-    /* ================= FOOTER ================= */
+  transition: .5s;
+}
 
-    footer {
-      padding: 30px 7%;
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
 
-      background: #020202;
+.gallery-item::after {
+  content: "ТРАФИК78";
 
-      border-top: 1px solid #222;
+  position: absolute;
 
-      text-align: center;
+  left: 20px;
+  bottom: 15px;
 
-      color: #777;
-    }
+  padding: 7px 12px;
 
-    footer strong {
-      color: white;
-    }
+  background: #e10600;
 
-    /* ================= MOBILE ================= */
+  font-weight: 1000;
 
-    @media
+  z-index: 2;
+}
+
+/* ABOUT */
+
+.about-box {
+  max-width: 950px;
+
+  margin: 45px auto 0;
+
+  padding: 45px;
+
+  background: #111;
+
+  border-left: 6px solid #e10600;
+}
+
+.about-box p {
+  color: #ccc;
+
+  font-size: 19px;
+
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 110px 7%;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(225,6,0,.15),
+      rgba(0,0,0,.95)
+    ),
+    #080808;
+
+  border-top: 3px solid #e10600;
+}
+
+.contact h2 {
+  font-size: clamp(40px,6vw,75px);
+
+  font-weight: 1000;
+
+  text-transform: uppercase;
+}
+
+.contact h2 span {
+  color: #e10600;
+}
+
+.contact-text {
+  margin-top: 15px;
+
+  color: #aaa;
+
+  font-size: 19px;
+}
+
+.contact-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.contact-button {
+  display: inline-block;
+
+  padding: 18px 28px;
+
+  color: white;
+
+  text-decoration: none;
+
+  background: #e10600;
+
+  font-size: 18px;
+
+  font-weight: 1000;
+
+  border-radius: 4px;
+}
+
+.contact-button.email {
+  background: #151515;
+
+  border: 2px solid #444;
+}
+
+.contact-button:hover {
+  background: #ff211a;
+}
+
+.contact-button.email:hover {
+  background: #151515;
+
+  border-color: #e10600;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 7%;
+
+  background: #020202;
+
+  border-top: 1px solid #222;
+
+  text-align: center;
+
+  color: #777;
+}
+
+footer strong {
+  color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  header {
+    padding: 15px 5%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .brand-name {
+    font-size: 23px;
+  }
+
+  .hero {
+    min-height: 850px;
+
+    align-items: flex-start;
+
+    background-position: 65% center;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    padding: 150px 6% 0;
+
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 65px;
+
+    letter-spacing: -4px;
+  }
+
+  .hero-title {
+    font-size: 25px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-info {
+    left: 5%;
+    right: 5%;
+
+    bottom: 20px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .info-box {
+    font-size: 10px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 260px;
+  }
+
+  .about-box {
+    padding: 30px 20px;
+  }
+
+  .about-box p {
+    font-size: 16px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="brand">
+
+    <div class="logo">🚛</div>
+
+    <div class="brand-name">
+      ТРАФИК<span>78</span>
+    </div>
+
+  </div>
+
+  <nav>
+    <a href="#services">Услуги</a>
+    <a href="#fleet">Автопарк</a>
+    <a href="#about">За нас</a>
+    <a href="#contact">Контакти</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="tag">
+      ПРОФЕСИОНАЛЕН ТРАНСПОРТ
+    </div>
+
+    <h1>
+      ТРАФИК<span>78</span>
+    </h1>
+
+    <div class="hero-title">
+      Транспорт на зърно
+    </div>
+
+    <p class="hero-description">
+      Професионален превоз на зърно и земеделска продукция.
+      Надеждни камиони, сериозно отношение и коректен транспорт.
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn btn-red" href="tel:0898795422">
+        📞 0898 795 422
+      </a>
+
+      <a class="btn btn-dark" href="mailto:trafik78@abv.bg">
+        ✉️ trafik78@abv.bg
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-info">
+
+    <div class="info-box">
+      🚛 ТРАНСПОРТ НА ЗЪРНО
+    </div>
+
+    <div class="info-box">
+      🚛 ЗЕМЕДЕЛСКА ПРОДУКЦИЯ
+    </div>
+
+    <div class="info-box">
+      ⚡ КОРЕКТЕН ПРЕВОЗ
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="services">
+
+  <h2 class="section-title">
+    Нашите <span>услуги</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Транспортни решения за зърно и земеделска продукция.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="card-number">
+        01 / ТРАНСПОРТ
+      </div>
+
+      <h3>
+        Транспорт на зърно
+      </h3>
+
+      <p>
+        Превоз на пшеница, царевица, слънчоглед
+        и други видове зърнена продукция.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-number">
+        02 / ТОВАРИ
+      </div>
+
+      <h3>
+        Земеделска продукция
+      </h3>
+
+      <p>
+        Надежден транспорт на земеделска продукция
+        между стопанства, бази и складове.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-number">
+        03 / СИГУРНОСТ
+      </div>
+
+      <h3>
+        Коректен превоз
+      </h3>
+
+      <p>
+        Сериозно отношение към всеки товар,
+        срок и транспортна задача.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section fleet" id="fleet">
+
+  <h2 class="section-title">
+    Нашият <span>автопарк</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Реални снимки на камионите на ТРАФИК78.
+  </p>
+
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img src="trafik78-kamion-1.jpg"
+           alt="Камион ТРАФИК78 за транспорт на зърно">
+    </div>
+
+    <div class="gallery-item">
+      <img src="trafik78-kamion-2.jpg"
+           alt="Камион ТРАФИК78">
+    </div>
+
+    <div class="gallery-item">
+      <img src="trafik78-kamion-3.jpg"
+           alt="Камион за превоз на земеделска продукция">
+    </div>
+
+    <div class="gallery-item">
+      <img src="trafik78-kamion-4.jpg"
+           alt="ТРАФИК78 транспортни камиони">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="about">
+
+  <h2 class="section-title">
+    За <span>ТРАФИК78</span>
+  </h2>
+
+  <div class="about-box">
+
+    <p>
+      ТРАФИК78 е транспортна компания, специализирана
+      в превоза на зърно и земеделска продукция.
+      Работим с надеждни камиони и подхождаме сериозно
+      към всеки товар и транспортна задача.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <h2>
+    Имате <span>товар?</span>
+  </h2>
+
+  <p class="contact-text">
+    Свържете се директно с ТРАФИК78.
+  </p>
+
+  <div class="contact-buttons">
+
+    <a class="contact-button"
+       href="tel:0898795422">
+      📞 0898 795 422
+    </a>
+
+    <a class="contact-button email"
+       href="mailto:trafik78@abv.bg">
+      ✉️ trafik78@abv.bg
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+
+  © 2026 <strong>ТРАФИК78</strong> ·
+  Транспорт на зърно и земеделска продукция
+
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TransportationService",
+  "name": "ТРАФИК78",
+  "description": "Професионален транспорт на зърно и земеделска продукция.",
+  "telephone": "+359898795422",
+  "email": "trafik78@abv.bg",
+  "serviceType": [
+    "Транспорт на зърно",
+    "Транспорт на земеделска продукция",
+    "Превоз на товари"
+  ]
+}
+</script>
+
+</body>
+</html>
